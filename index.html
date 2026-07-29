@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enterprise Fraud Intelligence & SHAP Inspector</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Header Banner -->
+        <header class="header-banner">
+            <div class="header-title">
+                <h1>🛡️ Enterprise Fraud Intelligence & SHAP Platform</h1>
+                <p>Real-time transaction risk scoring with TreeSHAP feature attribution & automated ML monitoring.</p>
+            </div>
+            <div class="system-badge">
+                <div class="pulse-dot"></div>
+                <span>XGBoost Engine: Active</span>
+            </div>
+        </header>
+
+        <!-- Main Workspace -->
+        <div class="grid-layout">
+            <!-- Left Column: Transaction Input Parameters -->
+            <div class="card">
+                <h3>📡 Transaction Payload Inspection</h3>
+                <form id="fraudForm">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="time">Time (Seconds Elapsed)</label>
+                            <input type="number" id="time" value="45210" step="1" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="amount">Transaction Amount ($)</label>
+                            <input type="number" id="amount" value="350.00" step="0.01" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="v14">PCA Feature V14 (Critical)</label>
+                            <input type="number" id="v14" value="-2.14" step="0.01" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="v12">PCA Feature V12</label>
+                            <input type="number" id="v12" value="-1.85" step="0.01" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="v17">PCA Feature V17</label>
+                            <input type="number" id="v17" value="-1.20" step="0.01" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="v4">PCA Feature V4</label>
+                            <input type="number" id="v4" value="1.45" step="0.01" required>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-primary" id="inspectBtn">🔍 Evaluate Fraud Risk & Compute SHAP</button>
+                </form>
+            </div>
+
+            <!-- Right Column: Results & SHAP Risk Drivers -->
+            <div class="card results-card">
+                <h3>📊 Real-Time Decision Analytics</h3>
+                
+                <div class="score-display-box">
+                    <div class="risk-label">Assessed Fraud Probability</div>
+                    <div class="probability-value" id="probVal">0.00%</div>
+                    <div id="statusBadge" class="status-badge status-low">PENDING INSPECTION</div>
+                </div>
+
+                <div class="form-group full-width" style="margin-bottom: 0;">
+                    <label>Top SHAP Risk Drivers (Feature Attribution)</label>
+                    <div class="shap-table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Feature</th>
+                                    <th>Value</th>
+                                    <th>SHAP Impact</th>
+                                    <th>Direction</th>
+                                </tr>
+                            ]]$
+                            <tbody id="shapTableBody">
+                                <tr>
+                                    <td colspan="4" style="text-align: center; color: var(--text-muted);">Awaiting transaction payload evaluation...</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+</body>
+</html>

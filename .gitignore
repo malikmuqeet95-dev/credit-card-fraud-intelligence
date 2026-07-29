@@ -1,0 +1,15 @@
+# Local virtual environment
+venv/
+.venv/
+ENV/
+
+# Python cache files
+__pycache__/
+*.py[cod]
+
+# Local Dataset (To prevent hitting GitHub 100MB file limit)
+data/creditcard.csv
+
+# System files
+.DS_Store
+Thumbs.db

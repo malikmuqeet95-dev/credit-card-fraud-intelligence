@@ -1,6 +1,6 @@
 🛡️ Enterprise Credit Card Fraud Intelligence & SHAP Platform
 
-An AI-powered web application that detects high-risk credit card transactions in real-time using XGBoost, SMOTE Class Balancing, and TreeSHAP Explainable AI.
+An AI-powered web application that detects high-risk credit card transactions in real-time using XGBoost, SMOTE Class Balancing, and TreeSHAP Explainable AI. Train the three different ML Algos and choose the one which have high evaluation score
 
 🌐 Live App: https://credit-card-fraud-intelligence-569xkwbbjjfehajfqvymkk.streamlit.app/
 
